@@ -1,0 +1,233 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-06-28T00:00:00Z",
+  "nationalityGroups": [
+    { "code": "EAC", "name": "East African Community", "memberNationalityCodes": ["KE", "UG", "RW", "TZ", "BI", "SS", "CD"] },
+    { "code": "SCHENGEN", "name": "Schengen Area", "memberNationalityCodes": ["AT", "BE", "DK", "FI", "FR", "DE", "GR", "IT", "NL", "NO", "ES", "SE", "CH"] },
+    { "code": "G7", "name": "G7 Nations", "memberNationalityCodes": ["US", "CA", "GB", "JP", "AU"] },
+    { "code": "REFERRAL", "name": "Referral-required nationalities", "memberNationalityCodes": ["NG_RESTRICTED_EXAMPLE"] }
+  ],
+  "groupVisas": [
+    {
+      "id": "EATV",
+      "name": "East Africa Tourist Visa",
+      "memberCountryIds": [1, 3, 10],
+      "govFee": 100.0,
+      "serviceFee": 20.0,
+      "processingTime": "3-5 Days",
+      "validityDays": 90,
+      "documents": ["Passport Scan", "Passport Photo", "Flight Itinerary"],
+      "officialLink": "https://www.irembo.gov.rw",
+      "pitch": "Visiting Kenya, Rwanda and Uganda? One visa covers all three and costs less than applying separately."
+    },
+    {
+      "id": "KAZA",
+      "name": "KAZA Univisa",
+      "memberCountryIds": [4, 5],
+      "govFee": 50.0,
+      "serviceFee": 20.0,
+      "processingTime": "3-5 Days",
+      "validityDays": 30,
+      "documents": ["Passport Scan", "Cover Letter", "Hotel Booking"],
+      "officialLink": "https://www.evisa.gov.zw",
+      "pitch": "Heading to Victoria Falls from both sides? The KAZA Univisa covers Zambia and Zimbabwe in a single application."
+    }
+  ],
+  "countries": [
+    {
+      "countryId": 1,
+      "countryCode": "KE",
+      "countryName": "Kenya",
+      "region": "East Africa",
+      "flagEmoji": "🇰🇪",
+      "basePolicy": "E_VISA",
+      "baseGovFee": 50.0,
+      "baseServiceFee": 2.0,
+      "processingTime": "24-72 hours",
+      "validityDays": 90,
+      "baseDocuments": ["Passport (6mo validity)", "Recent digital photo", "Flight reservation", "Hotel booking", "Yellow fever certificate"],
+      "officialSource": "https://www.etakenya.go.ke",
+      "tips": [
+        "Apply at least 5 days before travel to ensure smooth entry at Jomo Kenyatta International.",
+        "Yellow fever certificate is mandatory if arriving from a risk country."
+      ],
+      "overrides": [
+        { "matchGroup": "EAC", "policy": "VISA_FREE", "documents": ["National ID or Passport"], "note": "EAC partner-state citizens travel visa-free.", "priority": 1 }
+      ]
+    },
+    {
+      "countryId": 3,
+      "countryCode": "RW",
+      "countryName": "Rwanda",
+      "region": "East Africa",
+      "flagEmoji": "🇷🇼",
+      "basePolicy": "E_VISA",
+      "baseGovFee": 50.0,
+      "baseServiceFee": 0.0,
+      "processingTime": "Instant",
+      "validityDays": 90,
+      "baseDocuments": ["Passport Scan", "Passport Photo"],
+      "officialSource": "https://www.irembo.gov.rw",
+      "tips": ["All nationalities now receive a 90-day visa-on-arrival/eVisa for Rwanda."],
+      "overrides": [
+        { "matchGroup": "EAC", "policy": "VISA_FREE", "documents": ["National ID or Passport"], "priority": 1 },
+        { "matchGroup": "G7", "policy": "VISA_FREE", "documents": ["Passport"], "note": "Rwanda offers visa-free entry to most nationalities for tourism.", "priority": 1 },
+        { "matchGroup": "SCHENGEN", "policy": "VISA_FREE", "documents": ["Passport"], "priority": 1 }
+      ]
+    },
+    {
+      "countryId": 10,
+      "countryCode": "UG",
+      "countryName": "Uganda",
+      "region": "East Africa",
+      "flagEmoji": "🇺🇬",
+      "basePolicy": "E_VISA",
+      "baseGovFee": 50.0,
+      "baseServiceFee": 5.0,
+      "processingTime": "5-7 Days",
+      "validityDays": 90,
+      "baseDocuments": ["Passport Copy (bio-data page)", "Recent passport-size photo", "Yellow fever vaccination certificate", "Travel itinerary"],
+      "officialSource": "https://visas.immigration.go.ug",
+      "tips": [],
+      "overrides": [
+        { "matchGroup": "EAC", "policy": "VISA_FREE", "documents": ["National ID or Passport"], "priority": 1 }
+      ]
+    },
+    {
+      "countryId": 2,
+      "countryCode": "TZ",
+      "countryName": "Tanzania",
+      "region": "East Africa",
+      "flagEmoji": "🇹🇿",
+      "basePolicy": "E_VISA",
+      "baseGovFee": 50.0,
+      "baseServiceFee": 5.0,
+      "processingTime": "10 Business Days",
+      "validityDays": 90,
+      "baseDocuments": ["Passport Scan", "Passport Photo (digital)", "Return Ticket"],
+      "officialSource": "https://visa.immigration.go.tz",
+      "tips": [],
+      "overrides": [
+        { "matchGroup": "EAC", "policy": "VISA_FREE", "documents": ["National ID or Passport"], "priority": 1 },
+        { "matchNationalityCode": "US", "govFee": 100.0, "note": "US citizens pay a reciprocal $100 fee.", "priority": 2 }
+      ]
+    },
+    {
+      "countryId": 4,
+      "countryCode": "ZM",
+      "countryName": "Zambia",
+      "region": "Southern Africa",
+      "flagEmoji": "🇿🇲",
+      "basePolicy": "E_VISA",
+      "baseGovFee": 50.0,
+      "baseServiceFee": 5.0,
+      "processingTime": "3-5 Days",
+      "validityDays": 90,
+      "baseDocuments": ["Passport Scan", "Cover Letter to Director General", "Hotel Booking"],
+      "officialSource": "https://eservices.zambiaimmigration.gov.zm",
+      "tips": []
+    },
+    {
+      "countryId": 5,
+      "countryCode": "ZW",
+      "countryName": "Zimbabwe",
+      "region": "Southern Africa",
+      "flagEmoji": "🇿🇼",
+      "basePolicy": "E_VISA",
+      "baseGovFee": 30.0,
+      "baseServiceFee": 5.0,
+      "processingTime": "2-3 Days",
+      "validityDays": 90,
+      "baseDocuments": ["Passport Scan", "Address in Zimbabwe", "Previous visa (if any)"],
+      "officialSource": "https://www.evisa.gov.zw",
+      "tips": []
+    },
+    {
+      "countryId": 6,
+      "countryCode": "EG",
+      "countryName": "Egypt",
+      "region": "North Africa",
+      "flagEmoji": "🇪🇬",
+      "basePolicy": "VISA_ON_ARRIVAL",
+      "baseGovFee": 25.0,
+      "baseServiceFee": 5.0,
+      "processingTime": "On arrival",
+      "validityDays": 30,
+      "baseDocuments": ["Passport Scan", "Travel Itinerary"],
+      "officialSource": "https://www.visa2egypt.gov.eg",
+      "tips": [],
+      "overrides": [
+        { "matchGroup": "G7", "policy": "VISA_ON_ARRIVAL", "priority": 1 },
+        { "matchGroup": "SCHENGEN", "policy": "E_VISA", "note": "EU passport holders should pre-apply online.", "priority": 1 }
+      ]
+    },
+    {
+      "countryId": 7,
+      "countryCode": "MA",
+      "countryName": "Morocco",
+      "region": "North Africa",
+      "flagEmoji": "🇲🇦",
+      "basePolicy": "E_VISA",
+      "baseGovFee": 75.0,
+      "baseServiceFee": 5.0,
+      "processingTime": "72 hours",
+      "validityDays": 90,
+      "baseDocuments": ["Passport Scan", "Email verification", "Proof of residency/valid visa"],
+      "officialSource": "https://www.acces-maroc.ma",
+      "tips": [],
+      "overrides": [
+        { "matchGroup": "G7", "policy": "VISA_FREE", "priority": 1 },
+        { "matchGroup": "SCHENGEN", "policy": "VISA_FREE", "priority": 1 }
+      ]
+    },
+    {
+      "countryId": 8,
+      "countryCode": "ZA",
+      "countryName": "South Africa",
+      "region": "Southern Africa",
+      "flagEmoji": "🇿🇦",
+      "basePolicy": "EMBASSY_REQUIRED",
+      "baseGovFee": 0.0,
+      "baseServiceFee": 35.0,
+      "processingTime": "10-14 Days",
+      "validityDays": 90,
+      "baseDocuments": ["Passport Scan", "Bank statements (3 months)", "Flight itinerary", "Yellow fever certificate (if applicable)"],
+      "officialSource": "https://ehome.dha.gov.za/epermit",
+      "tips": ["Many nationalities are visa-exempt for short tourist stays — check your specific group."],
+      "overrides": [
+        { "matchGroup": "G7", "policy": "VISA_FREE", "documents": ["Passport"], "priority": 1 },
+        { "matchGroup": "SCHENGEN", "policy": "VISA_FREE", "documents": ["Passport"], "priority": 1 }
+      ]
+    },
+    {
+      "countryId": 9,
+      "countryCode": "ET",
+      "countryName": "Ethiopia",
+      "region": "East Africa",
+      "flagEmoji": "🇪🇹",
+      "basePolicy": "E_VISA",
+      "baseGovFee": 52.0,
+      "baseServiceFee": 5.0,
+      "processingTime": "3-5 Days",
+      "validityDays": 90,
+      "baseDocuments": ["Passport Scan (6mo validity)", "Recent passport-sized photo"],
+      "officialSource": "https://www.evisa.gov.et",
+      "tips": []
+    },
+    {
+      "countryId": 18,
+      "countryCode": "NG",
+      "countryName": "Nigeria",
+      "region": "West Africa",
+      "flagEmoji": "🇳🇬",
+      "basePolicy": "E_VISA",
+      "baseGovFee": 160.0,
+      "baseServiceFee": 25.0,
+      "processingTime": "3-5 Days",
+      "validityDays": 90,
+      "baseDocuments": ["Passport Scan", "Letter of invitation", "Flight return ticket", "Evidence of funds"],
+      "officialSource": "https://portal.immigration.gov.ng",
+      "tips": []
+    }
+  ]
+}
